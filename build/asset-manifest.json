@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/build/static/css/main.28b2526e.css",
+    "main.js": "/build/static/js/main.8715710d.js",
+    "static/media/pizza2.jpg": "/build/static/media/pizza2.1538134ea0a9c018d397.jpg",
+    "static/media/pizza1.jpg": "/build/static/media/pizza1.aa8ee2b5a25b4a71a059.jpg",
+    "static/media/food.jpg": "/build/static/media/food.6f0be33d3b08a98ae1f6.jpg",
+    "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/build/static/media/Montserrat-Italic-VariableFont_wght.ef11b720b9a6cfb9a317.ttf",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/build/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
+    "static/media/hamburger.jpg": "/build/static/media/hamburger.8ee3afc3744ae7ecb7fa.jpg",
+    "static/media/hamburger2-new.jpg": "/build/static/media/hamburger2-new.01074d7b2703f2618775.jpg",
+    "static/media/hamburger-new.jpg": "/build/static/media/hamburger-new.4cd9173d0aea5c2f8edf.jpg",
+    "static/media/pizza-new.jpg": "/build/static/media/pizza-new.2a26f9da4773dd930deb.jpg",
+    "static/media/pizza-python-logo.png": "/build/static/media/pizza-python-logo.0058e749f517569212b6.png",
+    "static/media/food-new.jpg": "/build/static/media/food-new.2a5862144abf84aaa6f2.jpg",
+    "index.html": "/build/index.html",
+    "main.28b2526e.css.map": "/build/static/css/main.28b2526e.css.map",
+    "main.8715710d.js.map": "/build/static/js/main.8715710d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28b2526e.css",
+    "static/js/main.8715710d.js"
+  ]
+}
