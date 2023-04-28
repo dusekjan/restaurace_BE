@@ -3,8 +3,12 @@ from werkzeug.security import generate_password_hash
 from src.http_response import json_response
 from src.api.auth import login_required, admin_login_required
 from db import get_db, rows_to_dict, row_to_dict
+import re
 
 bp = Blueprint("user", __name__, url_prefix="/user")
+
+EMAIL_REGEX = r"^\S+@\S+\.\S+$"
+PASSWORD_REGEX = r"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
 
 
 @bp.route("/data/", methods=["PUT"])
@@ -18,15 +22,20 @@ def update_user():
     email = request.json.get("email", "").strip()
     password = request.json.get("password", "").strip()
 
-    #TODO VALIDACE PARAMETRU
-    # if not validate(email) return json_status 400
-
     if name:
         db.execute("UPDATE user set name = ? where id = ?", (name, g.user["id"]))
+
     if email:
-        db.execute("UPDATE user set email = ? where id = ?", (email, g.user["id"]))
+        if re.match(EMAIL_REGEX, email):
+            db.execute("UPDATE user set email = ? where id = ?", (email, g.user["id"]))
+        else:
+            return json_response("bad_request")
+
     if password:
-        db.execute("UPDATE user set password = ? where id = ?", (generate_password_hash(password), g.user["id"]))
+        if re.match(PASSWORD_REGEX, password):
+            db.execute("UPDATE user set password = ? where id = ?", (generate_password_hash(password), g.user["id"]))
+        else:
+            return json_response("bad_request")
 
     db.commit()
     return json_response("ok")

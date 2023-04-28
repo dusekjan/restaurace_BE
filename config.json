@@ -1,0 +1,5 @@
+{
+  "RESTAURANT_OPENED": true,
+  "SESSION_COOKIE_SECURE": true,
+  "SECRET_KEY": "ec499f4cb8fbe3be9c18643edd9e95b452461ec525886e9e9b78030eccd5adc6"
+}

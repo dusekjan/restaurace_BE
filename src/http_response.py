@@ -23,6 +23,7 @@ STATUSES = {
     "unauthorized": HTTPStatus.UNAUTHORIZED,
     "conflict": HTTPStatus.CONFLICT,
     "forbidden": HTTPStatus.FORBIDDEN,
+    "not_found": HTTPStatus.NOT_FOUND,
     # custom
     "closed": CustomStatus(432, "Restaurant is closed."),
     "google": CustomStatus(433, "Google account.")

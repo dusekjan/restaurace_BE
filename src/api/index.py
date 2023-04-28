@@ -11,6 +11,7 @@ def serve_index_page(path):
     return render_template("index.html")
 
 
+
 @bp.route('/restaurant-opened', methods=["GET"])
 def is_restaurant_opened():
     return json_response("ok", data={"opened": current_app.config["RESTAURANT_OPENED"]})
@@ -34,10 +35,15 @@ So, if you do have a JSON API, limiting the allowed origins or eliminating CORS 
 is a great way to prevent unwanted requests. You don't need to use CSRF tokens in that situation. 
 If you have a more open CORS policy with regard to origins, it's a good idea to use CSRF tokens.
 """
+
+
 @bp.after_app_request
 def after_request(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS')
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
+
+    print("current_app.config[DEBUG]: ", current_app.config["DEBUG"])
+    if current_app.config["DEBUG"]:
+        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
     return response

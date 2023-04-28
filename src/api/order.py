@@ -8,29 +8,6 @@ bp = Blueprint("order", __name__, url_prefix="/order")
 
 RESTAURANT_ADDRESS = {"city": "Praha", "street": "V Záhoří 158", "postal_code": "15800"}
 
-"""
-You must at the very least check for Content-Type: application/json on the request.
-
-It's not possible to get a POSTed <form> to submit a request with Content-Type: application/json. 
-But you can submit a form with a valid JSON structure in the body as enctype="text/plain".
-
-It's not possible to do a cross-origin (CORS) XMLHttpRequest POST with Content-Type: application/json against 
-a non-cross-origin-aware server because this will cause a ‘pre-flighting’ HTTP OPTIONS request to approve it first. 
-But you can send a cross-origin XMLHttpRequest POST withCredentials if it is text/plain.
-
-So even with application/json checking, you can get pretty close to XSRF, if not completely there. And the behaviours 
-you're relying on to make that secure are somewhat obscure, and still in Working Draft stage; 
-they are not hard-and-fast guarantees for the future of the web.
-
-These might break, for example if a new JSON enctype were added to forms in a future HTML version. 
-(WHATWG added the text/plain enctype to HTML5 and originally tried also to add text/xml, 
-so it is not out of the question that this might happen.) You increase the risk of compromise from smaller, 
-subtler browser and plugin bugs in CORS implementation.
-
-So whilst you can probably get away with it for now, I absolutely wouldn't recommend going forward without 
-a proper anti-XSRF token system.
-"""
-
 
 @bp.route("/<int:order_id>/", methods=["GET"])
 @login_required
