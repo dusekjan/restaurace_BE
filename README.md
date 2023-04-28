@@ -1,4 +1,4 @@
-# restaurace_BE
+# Projekt Restaurace Backend
 Toto je README k backendu aplikace restaurace. Frontend je taktéž veřejný git repozitář zde: https://github.com/dusekjan/restaurace_FE
 Doporučuji spouštět projekt v některém vývojovém prostředí, které dokáže samo najít aplikaci a spustit ji. 
 Projekt je samozřejmě možné spustit i klasickými následujícími příkazy v hlavním adresáři:
