@@ -15,6 +15,7 @@ Projekt je samozřejmě možné spustit i klasickými následujícími příkazy
 ## Databáze
 Dazabáze se nemusí pouštět zvlášť, ale je připraven script pro naplnění, která se spouští příkazem `flask init-db` - budou smazána všechna aktuální data a 
 naplní se ukázkovými. Plnící script je v souboru `.\database\schema.sql`
+
 ### Uživatelé
 Do aplikace je možné se přihlásit jakýmkoliv účtem
  - libovolný uživatel s rolí 'user' - má nastavené heslo na 'user' a má email ve formátu user1@user.cz, user2@user.cz a tak dále
