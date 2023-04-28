@@ -12,6 +12,14 @@ Projekt je samozřejmě možné spustit i klasickými následujícími příkazy
 ## Spuštění backend části bez debug módu
 `python -m flask run --host=localhost` poté aplikace běží na `localhost:5000`
 
+## Databáze
+Dazabáze se nemusí pouštět zvlášť, ale je připraven script pro naplnění, která se spouští příkazem `flask init-db` - budou smazána všechna aktuální data a 
+naplní se ukázkovými. Plnící script je v souboru `.\database\schema.sql`
+### Uživatelé
+Do aplikace je možné se přihlásit jakýmkoliv účtem
+ - libovolný uživatel s rolí 'user' - má nastavené heslo na 'user' a má email ve formátu user1@user.cz, user2@user.cz a tak dále
+ - libovolný uživatel s rolí 'admin' - má nastavené heslo na 'admin' a má email ve formátu admin1@admin.cz, admin2@admin.cz a tak dále                           
+
 ### Užitečné informace
 Frontend je ReactJS aplikace, kterou je při vývoji možné spustit na `localhost:3000`.
 #### Backend běží v debug módu:
